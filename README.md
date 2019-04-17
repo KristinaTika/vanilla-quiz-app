@@ -1,5 +1,7 @@
 ## Quiz App
 
+You can see it here: https://kristinatika.github.io/vanilla-quiz-app/ 
+
 App is built using vanilla javaScript.
 
 There are 2 sides of the app: 
