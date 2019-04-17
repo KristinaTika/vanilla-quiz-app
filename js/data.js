@@ -65,7 +65,7 @@ export const addQuestionToLocalStorage = (newQuestionText, options) => {
         }
     });
 
-    // ako je localStorage nije prazan
+    // ako localStorage nije prazan
     if (questionMethodsForLocalStorage.getQuestionCollection().length > 0) {
         /* onda id pitanje postaje:
         questionId = 

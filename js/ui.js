@@ -21,8 +21,6 @@ export const clearQuestionBtn = document.querySelector('#questions-clear-btn');
 export const resultsListWrapper = document.querySelector('.results-list-wrapper');
 export const clearResultsBtn = document.querySelector('#results-clear-btn');
 
-
-
 const addInputHandler = () => {
 
     const counter = document.querySelectorAll('.admin-option').length;
@@ -33,13 +31,10 @@ const addInputHandler = () => {
     <input type="text" class="admin-option admin-option-${counter}" value="">
     `;
     adminOptionsContainer.appendChild(newAnswerField);
-
     // skloni event listener sa 2. odgovora
     adminOptionsContainer.lastElementChild.previousElementSibling.lastElementChild.removeEventListener('focus', addInputHandler);
-
     // stavi event listener na poslednji odgovor
     adminOptionsContainer.lastElementChild.lastElementChild.addEventListener('focus', addInputHandler);
-
 }
 
 export const addQuestionInputsDinamically = () => {
@@ -258,11 +253,7 @@ export const deleteResults = (event, personLocalStorage) => {
             }
             // setuj izmenjenu listu ljudi u local storage
             personLocalStorage.setPersonData(personsArray);
-
-
         });
-
-
     }
 }
 
@@ -307,7 +298,6 @@ const instantAnswerDiv = document.querySelector('#instant-answer-wrapper');
 const emotionIcon = document.querySelector('#emotion');
 export const nextQuestionBtn = document.querySelector('#next-question-btn');
 
-
 export const renderQuestions = (storageQuestionList, progress) => {
     //   ako je duzina niza pitanja veca od 0
     if (storageQuestionList.getQuestionCollection().length > 0) {
@@ -341,7 +331,6 @@ export const renderProgress = (storageQuestionList, progress) => {
     // imamo primer 1/3 (prvo pitanje od 3);
     // update-ujemo tekst tog elementa da bi nam pisalo 1/3
     progressParagraph.textContent = `${progress.questionIndex + 1}/ ${storageQuestionList.getQuestionCollection().length}`;
-
 }
 
 export const checkAnswer = (event, checkAnswer, isFinished) => {
@@ -388,9 +377,6 @@ export const showAnswer = (answerResult, clickedOptions) => {
     emotionIcon.setAttribute('src', twoOptions.emoji[index]);
 
     clickedOptions.previousElementSibling.style.backgroundColor = twoOptions.optionsBackground[index];
-
-
-
 }
 
 // f-ja koja resetuje izged pitanja na pocetni dizajn, odnosno kada treba da odgovoris na pitanje, ako ih jos ima
@@ -436,7 +422,6 @@ export const startQuizBtn = document.querySelector('#start-quiz-btn');
 export const firstName = document.querySelector('#firstname');
 export const lastName = document.querySelector('#lastname');
 
-
 export const getFullName = (currentPersonData, storageQuestionList, admin) => {
 
     if (firstName.value !== '' && lastName.value !== '') {
@@ -459,8 +444,6 @@ export const getFullName = (currentPersonData, storageQuestionList, admin) => {
     }
 }
 
-
-
 /*  
 =====================
   LANDING PAGE - END
@@ -475,7 +458,6 @@ export const getFullName = (currentPersonData, storageQuestionList, admin) => {
 const finalResultSection = document.querySelector('.final-result-container');
 const finalScoreText = document.querySelector('#final-score-text');
 
-
 export const finalResut = (currentPerson) => {
 
     finalScoreText.textContent = `${currentPerson.fullName[0]} ${currentPerson.fullName[1]}, your final score is: ${currentPerson.score}`;
@@ -483,8 +465,6 @@ export const finalResut = (currentPerson) => {
     QuizPageSection.style.display = 'none';
     finalResultSection.style.display = 'block';
 }
-
-
 
 /*  
 ===========================

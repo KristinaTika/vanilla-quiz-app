@@ -11,7 +11,6 @@ const insertQuestionHandler = () => {
     // selektujemo svaki put odgovore, kako bi se dinamicki povecavao broj odgovora koje dodajemo u pitanju
     const adminOptions = document.querySelectorAll('.admin-option');
 
-
     const checkBoolean = data.addQuestionToLocalStorage(ui.newQuestionsText, adminOptions, ui.clickedOptions);
 
     if(checkBoolean) {
